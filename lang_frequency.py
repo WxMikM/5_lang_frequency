@@ -24,9 +24,8 @@ def get_most_frequent_words(source_text):
 
 
 if __name__ == '__main__':
-    data = load_data(get_file_path())
-    if data is None:
+    list_words = load_data(get_file_path())
+    if list_words is None:
         print('Нельзя загрузить файл')
         sys.exit()
-    print(' '.join(get_most_frequent_words(data)))
-    
+    print(' '.join(get_most_frequent_words(list_words)))
