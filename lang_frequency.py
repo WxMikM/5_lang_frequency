@@ -1,6 +1,9 @@
 import sys
 import os
 import re
+import collections
+
+required_number_of_words = 10
 
 
 def get_file_path():
@@ -15,12 +18,10 @@ def load_data(path):
 
 
 def get_most_frequent_words(source_text):
-    all_words = {}
     word_regex = re.compile(r'\w+')
-    for elem in word_regex.findall(source_text):
-        all_words[elem.lower()] = all_words.get(elem.lower(), 0) + 1
+    all_words = collections.Counter(word_regex.findall(source_text.lower()))
     all_words = sorted(all_words.items(), key=lambda x: x[1], reverse=True)
-    return [('{}'.format(key)) for key, value in all_words[:10]]
+    return [('{}'.format(key)) for key, value in all_words[:required_number_of_words]]
 
 
 if __name__ == '__main__':
