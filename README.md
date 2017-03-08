@@ -1,6 +1,10 @@
 # Frequency Analysis of Words
 
-[TODO. There will be project description]
+Скрипт принимает на вход путь до текстового файла и выводит в консоль десять самых популярных слов в этом файле в порядке убывания частоты.
+
+~$ python3 lang_frequency.py [path]
+
+я не и в что он на а но она
 
 # Project Goals
 
