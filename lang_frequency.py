@@ -19,7 +19,7 @@ def get_most_frequent_words(source_text):
     required_number_of_words = 10
     word_regex = re.compile(r'\w+')
     all_words = Counter(word_regex.findall(source_text.lower()))
-    return [('{}'.format(key)) for key, value in all_words.most_common(required_number_of_words)]
+    return [word for word, amount in all_words.most_common(required_number_of_words)]
 
 
 if __name__ == '__main__':
@@ -27,4 +27,5 @@ if __name__ == '__main__':
     if list_words is None:
         print('Нельзя загрузить файл')
         sys.exit()
+    print('Самые частые слова в тексте: ')
     print(' '.join(get_most_frequent_words(list_words)))
